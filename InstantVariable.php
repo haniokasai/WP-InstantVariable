@@ -39,11 +39,11 @@ class InstantVariable
     {
         add_menu_page(
             'InstantVariable',           /* ページタイトル*/
-            '変数の管理',           /* メニュータイトル */
+            'InstantVariable',           /* メニュータイトル */
             'manage_options',         /* 権限 */
             'instantvariable',    /* ページを開いたときのURL */
             [$this, 'show_about_plugin'],       /* メニューに紐づく画面を描画するcallback関数 */
-            'dashicons-format-gallery', /* アイコン see: https://developer.wordpress.org/resource/dashicons/#awards */
+            'dashicons-clipboard', /* アイコン see: https://developer.wordpress.org/resource/dashicons/#awards */
             99                          /* 表示位置のオフセット */
         );
     }
@@ -104,6 +104,19 @@ class InstantVariable
             }
         }
     }
+
+    function show_about_plugin() {
+        $html = "<h1>カスタムバナー</h1>";
+        $html .= "<p>トップページに表示するバナーを指定できます</p>";
+  
+        echo $html;
+      }
+  
+      function show_config_form() {
+  ?>
+          <h1>カスタムバナーの設定</h1>
+  <?php
+      }
 
 }
 ?>
